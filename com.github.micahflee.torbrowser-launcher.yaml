@@ -56,6 +56,9 @@ modules:
           type: anitya
           project-id: 1239
           url-template: https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-$version.tar.bz2
+      - type: shell
+        commands:
+          - sed -i 's/3.9/3.10/g' configure
 
   - name: python3-requests
     buildsystem: simple
