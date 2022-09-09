@@ -200,7 +200,9 @@ modules:
           project-id: 6359
           url-template: https://github.com/micahflee/torbrowser-launcher/archive/refs/tags/v$version.tar.gz
       - type: patch
-        path: use-flatpak-sys-prefix.patch
+        paths:
+          - use-flatpak-sys-prefix.patch
+          - fix-strict-parameters-for-gui.move.patch
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1
     post-install:

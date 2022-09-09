@@ -1,0 +1,27 @@
+From fcfae4c766b57b6288fed9179cb127368c8a0c44 Mon Sep 17 00:00:00 2001
+From: Erik Johnson <github@ekriirke.net>
+Date: Sat, 4 Sep 2021 00:34:50 +0200
+Subject: [PATCH] Fix strict parameters for gui.move
+
+---
+ torbrowser_launcher/__init__.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/torbrowser_launcher/__init__.py b/torbrowser_launcher/__init__.py
+index bff3e8e..115fd4f 100644
+--- a/torbrowser_launcher/__init__.py
++++ b/torbrowser_launcher/__init__.py
+@@ -90,8 +90,8 @@ def main():
+     desktop = app.desktop()
+     window_size = gui.size()
+     gui.move(
+-        (desktop.width() - window_size.width()) / 2,
+-        (desktop.height() - window_size.height()) / 2,
++        (desktop.width() - window_size.width()) // 2,
++        (desktop.height() - window_size.height()) // 2,
+     )
+     gui.show()
+ 
+-- 
+2.32.0
+
